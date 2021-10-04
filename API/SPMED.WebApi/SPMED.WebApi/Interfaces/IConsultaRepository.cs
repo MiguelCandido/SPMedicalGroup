@@ -40,7 +40,21 @@ namespace SPMED.WebApi.Interfaces
         /// <param name="idConsulta">ID da consulta a ser deletada</param>
         void Deletar(int idConsulta);
 
+        /// <summary>
+        /// Altera a situação de uma consulta
+        /// </summary>
+        /// <param name="idConsulta"> id da consulta a ser alterada</param>
+        /// <param name="consulta">Dados da consulta a serem alterados</param>
         void AlterarSituação(int idConsulta, Consultum consulta);
+
+        /// <summary>
+        /// Lista as consultas do usuario
+        /// </summary>
+        /// <param name="idusuario">id do usuario a ter as consultas listadas</param>
+        /// <returns></returns>
+        List<Consultum> listarMinhas(int idusuario);
+
+        void Descrever(int idconsulta, Consultum consulta);
 
     }
 }

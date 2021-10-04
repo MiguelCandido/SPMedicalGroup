@@ -1,4 +1,5 @@
 ﻿using SPMED.WebApi.Domains;
+using SPMED.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,5 +43,11 @@ namespace SPMED.WebApi.Interfaces
         /// </summary>
         /// <param name="idUsuario">ID do usuario a ser deletado</param>
         void Deletar(int idUsuario);
+
+        /// <summary>
+        /// Loga o usuário
+        /// </summary>
+        /// <param name="cred">Credenciais de login</param>
+        Usuario login(LoginViewModel cred);
     }
 }

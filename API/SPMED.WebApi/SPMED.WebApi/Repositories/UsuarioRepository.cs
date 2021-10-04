@@ -1,6 +1,7 @@
 ﻿using SPMED.WebApi.Contexts;
 using SPMED.WebApi.Domains;
 using SPMED.WebApi.Interfaces;
+using SPMED.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,11 @@ namespace SPMED.WebApi.Repositories
         public List<Usuario> Listar()
         {
             return ctx.Usuarios.ToList();
+        }
+
+        public Usuario login(LoginViewModel cred)
+        {
+            return ctx.Usuarios.FirstOrDefault(u => u.Email == cred.Email && u.Senha == cred.Senha);
         }
     }
 }

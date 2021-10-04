@@ -1,4 +1,5 @@
-﻿using SPMED.WebApi.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using SPMED.WebApi.Contexts;
 using SPMED.WebApi.Domains;
 using SPMED.WebApi.Interfaces;
 using System;
@@ -43,8 +44,6 @@ namespace SPMED.WebApi.Repositories
             if (consultaU.IdPaciente != 0) { consultaBuscada.IdPaciente = consultaU.IdPaciente; }
             if (consultaU.Situacao != null) { consultaBuscada.Situacao = consultaU.Situacao; }
             if (consultaU.DataConsulta != DateTime.MinValue) { consultaBuscada.DataConsulta = consultaU.DataConsulta; }
-            if (consultaU.Descricao != null) { consultaBuscada.Descricao = consultaU.Descricao; }
-
 
             ctx.Consulta.Update(consultaBuscada);
 
@@ -73,9 +72,28 @@ namespace SPMED.WebApi.Repositories
             ctx.SaveChanges();
         }
 
+        public void Descrever(int idconsulta, Consultum consulta)
+        {
+            Consultum consultaBuscada = ctx.Consulta.Find(idconsulta);
+
+            consultaBuscada.Situacao = consulta.Situacao;
+
+            ctx.Consulta.Update(consultaBuscada);
+
+            ctx.SaveChanges();
+
+        }
+
         public List<Consultum> Listar()
         {
             return ctx.Consulta.ToList();
+        }
+
+        public List<Consultum> listarMinhas(int idusuario)
+        {
+            return ctx.Consulta
+                .Where(p => p.IdPacienteNavigation.IdUsuarioNavigation.IdUsuario == idusuario)
+                .ToList();
         }
     }
 }

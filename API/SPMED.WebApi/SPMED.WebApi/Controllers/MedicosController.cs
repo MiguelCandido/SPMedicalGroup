@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SPMED.WebApi.Domains;
 using SPMED.WebApi.Interfaces;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace SPMED.WebApi.Controllers
 {
+    [Authorize]
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
@@ -22,6 +24,7 @@ namespace SPMED.WebApi.Controllers
             _medicoRepository = new MedicoRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Medico medico)
         {
@@ -29,6 +32,8 @@ namespace SPMED.WebApi.Controllers
 
             return StatusCode(201);
         }
+
+        [Authorize(Roles = "1")]
         [HttpPut("{idMedico}")]
         public IActionResult Atualizar(int idMedico, Medico medicoUPDT)
         {
@@ -51,6 +56,7 @@ namespace SPMED.WebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("{idMedico}")]
         public IActionResult Deletar(int idMedico)
         {
@@ -75,6 +81,7 @@ namespace SPMED.WebApi.Controllers
 
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()
         {

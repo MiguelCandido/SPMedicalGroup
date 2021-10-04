@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SPMED.WebApi.Domains;
 using SPMED.WebApi.Interfaces;
 using SPMED.WebApi.Repositories;
+using SPMED.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +24,7 @@ namespace SPMED.WebApi.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -30,6 +33,7 @@ namespace SPMED.WebApi.Controllers
             return Ok(listaUsuario);
         }
 
+        [Authorize(Roles = "1")]
         [HttpGet("{idUsuario}")]
         public IActionResult BuscarPorID(int idUsuario)
         {
@@ -50,6 +54,7 @@ namespace SPMED.WebApi.Controllers
         
         }
 
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Usuario usuario)
         {
@@ -58,6 +63,7 @@ namespace SPMED.WebApi.Controllers
             return StatusCode(201);
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut("{idUsuario}")]
         public IActionResult Atualizar(int idUsuario, Usuario usuarioUPDT)
         {
@@ -80,6 +86,7 @@ namespace SPMED.WebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("{idUsuario}")]
         public IActionResult Deletar(int idUsuario)
         {
