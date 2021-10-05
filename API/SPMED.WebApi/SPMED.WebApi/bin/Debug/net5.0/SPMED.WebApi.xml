@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SPMED.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:SPMED.WebApi.Controllers.ClinicasController.Listar">
+            <summary>
+            Lista as clinicas
+            </summary>
+            <returns> Uma lista de clinicas</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ClinicasController.BuscarPorID(System.Int32)">
+            <summary>
+            Busca uma clinica por id
+            </summary>
+            <param name="idClinica">id da clinica a ser buscada</param>
+            <returns>uma clinica encontrada</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ClinicasController.Cadastrar(SPMED.WebApi.Domains.Clinica)">
+            <summary>
+            cadastra uma clinica
+            </summary>
+            <param name="clinica">objeto clinica com os dados a serem cadastrados</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ClinicasController.Atualizar(System.Int32,SPMED.WebApi.Domains.Clinica)">
+            <summary>
+            atualiza uma clinica
+            </summary>
+            <param name="idClinica">id da clinica a ser atualizada</param>
+            <param name="clinicaUPDT">dados das clinicas a serem atualizados</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ClinicasController.Deletar(System.Int32)">
+            <summary>
+            deleta uma clinica
+            </summary>
+            <param name="idClinica">id da clinica a ser deletada</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ConsultasController.Listar">
+            <summary>
+            Lista as consultas
+            </summary>
+            <returns> uma lista de consultas</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ConsultasController.BuscarPorID(System.Int32)">
+            <summary>
+            Busca uma consulta por ID
+            </summary>
+            <param name="idConsulta">O id da consulta a ser buscada</param>
+            <returns>A consulta encontrada</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ConsultasController.Cadastrar(SPMED.WebApi.Domains.Consultum)">
+            <summary>
+            Cadastra uma consulta
+            </summary>
+            <param name="consulta">O objeto com os dados da nova consulta</param>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ConsultasController.Atualizar(System.Int32,SPMED.WebApi.Domains.Consultum)">
+            <summary>
+            Atualiza uma consulta existente
+            </summary>
+            <param name="idConsulta">id da consulta a ser atualizada</param>
+            <param name="consultaUPDT">Objeto com os dados novos da consulta</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ConsultasController.Deletar(System.Int32)">
+            <summary>
+            Deleta uma consulta
+            </summary>
+            <param name="idConsulta">ID da consulta a ser deletada</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ConsultasController.AlterarSituacao(System.Int32,SPMED.WebApi.Domains.Consultum)">
+            <summary>
+            Altera a situação de uma consulta
+            </summary>
+            <param name="idConsulta"> id da consulta a ser alterada</param>
+            <param name="consulta">objeto com a situação nova</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ConsultasController.ListarMinhas">
+            <summary>
+            lista as consultas do usuário logado
+            </summary>
+            <returns>uma lista de consultas</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.ConsultasController.Descrever(System.Int32,SPMED.WebApi.Domains.Consultum)">
+            <summary>
+            Adiciona a descrição da consulta
+            </summary>
+            <param name="idConsulta">id da consulta a ser descrita</param>
+            <param name="consulta">objeto com a descrição da consulta</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.LoginController.Login(SPMED.WebApi.ViewModels.LoginViewModel)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="login">Objeto login que contém o e-mail e a senha do usuário</param>
+            <returns>Retorna um token com as informações do usuário</returns>
+            dominio/api/Login
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.MedicosController.Cadastrar(SPMED.WebApi.Domains.Medico)">
+            <summary>
+            cadastra um medico
+            </summary>
+            <param name="medico">objeto com os dados do novo medico</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.MedicosController.Atualizar(System.Int32,SPMED.WebApi.Domains.Medico)">
+            <summary>
+            atualiza os dados de um medico
+            </summary>
+            <param name="idMedico">id do medico a ser atualizado</param>
+            <param name="medicoUPDT">objeto com os dados do medico a serem atualizados</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.MedicosController.Deletar(System.Int32)">
+            <summary>
+            deleta um medico do bd
+            </summary>
+            <param name="idMedico">id do medico a ser deletado</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.MedicosController.Listar">
+            <summary>
+            Lista os medicos
+            </summary>
+            <returns> Uma lista de medicos</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.PacienteController.Cadastrar(SPMED.WebApi.Domains.Paciente)">
+            <summary>
+            cadastra um paciente
+            </summary>
+            <param name="paciente">objeto com os dados do novo paciente</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.PacienteController.Atualizar(System.Int32,SPMED.WebApi.Domains.Paciente)">
+            <summary>
+            atualiza um paciente
+            </summary>
+            <param name="idPaciente">id do paciente a ser atualizado</param>
+            <param name="pacienteUPDT">objeto com os dados do paciente a serem atualizados</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.PacienteController.Deletar(System.Int32)">
+            <summary>
+            deleta um paciente
+            </summary>
+            <param name="idPaciente">id do paciente a ser deletado</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.PacienteController.Listar">
+            <summary>
+            Lista os pacientes
+            </summary>
+            <returns> Uma lista de pacientes</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.UsuariosController.Listar">
+            <summary>
+            Lista os usuarios
+            </summary>
+            <returns> Uma lista de usuarios</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.UsuariosController.BuscarPorID(System.Int32)">
+            <summary>
+            Busca um usuario pelo id
+            </summary>
+            <param name="idUsuario">id do usuario a ser buscado</param>
+            <returns>um usuario encontrado</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.UsuariosController.Cadastrar(SPMED.WebApi.Domains.Usuario)">
+            <summary>
+            Cadastra um usuario
+            </summary>
+            <param name="usuario">Objeto com os dados do usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.UsuariosController.Atualizar(System.Int32,SPMED.WebApi.Domains.Usuario)">
+            <summary>
+            Atualiza um usuario
+            </summary>
+            <param name="idUsuario">id do usuario a ser atualizado</param>
+            <param name="usuarioUPDT">dados novos do usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Controllers.UsuariosController.Deletar(System.Int32)">
+            <summary>
+            deleta um usuario
+            </summary>
+            <param name="idUsuario">id do usuario a ser deletado</param>
+            <returns></returns>
+        </member>
+        <member name="T:SPMED.WebApi.Interfaces.IClinicaRepository">
+            <summary>
+            Inteface responsável pelas clínicas
+            </summary>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IClinicaRepository.Listar">
+            <summary>
+            Lista todos as clinicas
+            </summary>
+            <returns>Uma lista de clinicas</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IClinicaRepository.BuscarPorID(System.Int32)">
+            <summary>
+            Busca uma clinica a partir de um ID
+            </summary>
+            <param name="idclinica">ID da clinica a ser buscada</param>
+            <returns>Uma clinica encontrada</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IClinicaRepository.Cadastrar(SPMED.WebApi.Domains.Clinica)">
+            <summary>
+            Cadastra uma nova clinica
+            </summary>
+            <param name="NovaClinica">Objeto com as informações a serem cadastradas</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IClinicaRepository.Atualizar(System.Int32,SPMED.WebApi.Domains.Clinica)">
+            <summary>
+            Atualiza os dados de uma clinica
+            </summary>
+            <param name="idClinica">ID da clinica a ser atualizada</param>
+            <param name="clinicaU">Objeto com as informações a serem atualizadas</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IClinicaRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma clinica
+            </summary>
+            <param name="idClinica">ID da clinica a ser deletada</param>
+        </member>
+        <member name="T:SPMED.WebApi.Interfaces.IConsultaRepository">
+            <summary>
+            Interface responsavel pelas consultas
+            </summary>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IConsultaRepository.Listar">
+            <summary>
+            Lista todos as consultas
+            </summary>
+            <returns>Uma lista de consultas</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IConsultaRepository.BuscarPorID(System.Int32)">
+            <summary>
+            Busca uma consulta a partir de um ID
+            </summary>
+            <param name="idConsulta">ID da consulta a ser buscada</param>
+            <returns>Uma consulta encontrada</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IConsultaRepository.Cadastrar(SPMED.WebApi.Domains.Consultum)">
+            <summary>
+            Cadastra uma nova consulta
+            </summary>
+            <param name="NovaConsulta">Objeto com as informações a serem cadastradas</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IConsultaRepository.Atualizar(System.Int32,SPMED.WebApi.Domains.Consultum)">
+            <summary>
+            Atualiza os dados de uma consulta
+            </summary>
+            <param name="idConsulta">ID da consulta a ser atualizada</param>
+            <param name="consultaU">Objeto com as informações a serem atualizadas</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IConsultaRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma consulta
+            </summary>
+            <param name="idConsulta">ID da consulta a ser deletada</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IConsultaRepository.AlterarSituação(System.Int32,SPMED.WebApi.Domains.Consultum)">
+            <summary>
+            Altera a situação de uma consulta
+            </summary>
+            <param name="idConsulta"> id da consulta a ser alterada</param>
+            <param name="consulta">Dados da consulta a serem alterados</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IConsultaRepository.listarMinhas(System.Int32)">
+            <summary>
+            Lista as consultas do usuario
+            </summary>
+            <param name="idusuario">id do usuario a ter as consultas listadas</param>
+            <returns></returns>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IMedicoRepository.Cadastrar(SPMED.WebApi.Domains.Medico)">
+            <summary>
+            Cadastra um novo Medico
+            </summary>
+            <param name="novoMedico">Objeto com as informações a serem cadastradas</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IMedicoRepository.Atualizar(System.Int32,SPMED.WebApi.Domains.Medico)">
+            <summary>
+            Atualiza os dados de um Medico
+            </summary>
+            <param name="idMedico">ID do Medico a ser atualizado</param>
+            <param name="MedicoU">Objeto com as informações a serem atualizadas</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IMedicoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um Medico
+            </summary>
+            <param name="idMedico">ID do Medico a ser deletado</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IPacienteRepository.Cadastrar(SPMED.WebApi.Domains.Paciente)">
+            <summary>
+            Cadastra um novo paciente
+            </summary>
+            <param name="novoPaciente">Objeto com as informações a serem cadastradas</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IPacienteRepository.Atualizar(System.Int32,SPMED.WebApi.Domains.Paciente)">
+            <summary>
+            Atualiza os dados de um paciente
+            </summary>
+            <param name="idPaciente">ID do paciente a ser atualizado</param>
+            <param name="pacienteU">Objeto com as informações a serem atualizadas</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IPacienteRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um paciente
+            </summary>
+            <param name="idPaciente">ID do paciente a ser deletado</param>
+        </member>
+        <member name="T:SPMED.WebApi.Interfaces.IUsuarioRepository">
+            <summary>
+            Interface responsável pelos usuarios
+            </summary>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IUsuarioRepository.Listar">
+            <summary>
+            Lista todos os usuarios
+            </summary>
+            <returns>Uma lista de usuarios</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IUsuarioRepository.BuscarPorID(System.Int32)">
+            <summary>
+            Busca um usuario a partir de um ID
+            </summary>
+            <param name="idUsuario">ID do usuario a ser buscada</param>
+            <returns>Um usuario encontrada</returns>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IUsuarioRepository.Cadastrar(SPMED.WebApi.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuario
+            </summary>
+            <param name="NovoUsuario">Objeto com as informações a serem cadastradas</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IUsuarioRepository.Atualizar(System.Int32,SPMED.WebApi.Domains.Usuario)">
+            <summary>
+            Atualiza os dados de um usuario
+            </summary>
+            <param name="idUsuario">ID do usuario a ser atualizado</param>
+            <param name="usuarioU">Objeto com as informações a serem atualizadas</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuario
+            </summary>
+            <param name="idUsuario">ID do usuario a ser deletado</param>
+        </member>
+        <member name="M:SPMED.WebApi.Interfaces.IUsuarioRepository.login(SPMED.WebApi.ViewModels.LoginViewModel)">
+            <summary>
+            Loga o usuário
+            </summary>
+            <param name="cred">Credenciais de login</param>
+        </member>
+        <member name="T:SPMED.WebApi.ViewModels.LoginViewModel">
+            <summary>
+            Classe responsável pelo modelo de login
+            </summary>
+        </member>
+    </members>
+</doc>

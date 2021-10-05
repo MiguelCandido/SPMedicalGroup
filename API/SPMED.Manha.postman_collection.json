@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f5a9b38b-431d-4e89-9a04-4c7176490893",
+		"_postman_id": "723a6262-b1a1-4ead-a84d-0278f2c533e7",
 		"name": "SPMED.Manha",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -292,6 +292,16 @@
 				{
 					"name": "Listar Todos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFkbWluQHNwbWVkaWNhbGdyb3VwLmNvbS5iciIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjMzNDAyNTA5LCJpc3MiOiJTUE1FRC53ZWJBUEkiLCJhdWQiOiJTUE1FRC53ZWJBUEkifQ.42XEiQDoeqLnMpstu3irSfsSxsoF6wYhzbIn9t8d6Xo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -413,6 +423,16 @@
 				{
 					"name": "Mudar Situação",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFkbWluQHNwbWVkaWNhbGdyb3VwLmNvbS5iciIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjMzNDAyNTA5LCJpc3MiOiJTUE1FRC53ZWJBUEkiLCJhdWQiOiJTUE1FRC53ZWJBUEkifQ.42XEiQDoeqLnMpstu3irSfsSxsoF6wYhzbIn9t8d6Xo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -425,7 +445,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/consultas/situacao/8",
+							"raw": "http://localhost:5000/api/consultas/situacao/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -435,7 +455,7 @@
 								"api",
 								"consultas",
 								"situacao",
-								"8"
+								"3"
 							]
 						}
 					},
@@ -449,7 +469,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsZXhhbmRyZUBnbWFpbC5jb20iLCJqdGkiOiI2IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMyIsImV4cCI6MTYzMzM1NzIxNiwiaXNzIjoiU1BNRUQud2ViQVBJIiwiYXVkIjoiU1BNRUQud2ViQVBJIn0.qq7tY-X_7TBbeLWgOC7tPQXyU7no3yH0KSsc3MeBZvk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvYmVydG8ucG9zc2FybGVAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwianRpIjoiMyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzM0MDIxMTEsImlzcyI6IlNQTUVELndlYkFQSSIsImF1ZCI6IlNQTUVELndlYkFQSSJ9.qEMhTtfrT7Bw8-IXNFe3bEVqvRaGHlM9dhKuEu2dJAw",
 									"type": "string"
 								}
 							]
@@ -475,9 +495,41 @@
 				{
 					"name": "Descrever",
 					"request": {
-						"method": "GET",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvYmVydG8ucG9zc2FybGVAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwianRpIjoiMyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzM0MDIxMTEsImlzcyI6IlNQTUVELndlYkFQSSIsImF1ZCI6IlNQTUVELndlYkFQSSJ9.qEMhTtfrT7Bw8-IXNFe3bEVqvRaGHlM9dhKuEu2dJAw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
 						"header": [],
-						"url": null
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Descrevi o 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/consultas/descrever/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"consultas",
+								"descrever",
+								"3"
+							]
+						}
 					},
 					"response": []
 				}

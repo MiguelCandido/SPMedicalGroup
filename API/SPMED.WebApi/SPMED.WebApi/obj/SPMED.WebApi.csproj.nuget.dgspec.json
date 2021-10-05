@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fic\\Desktop\\Nova pasta\\SPMedicalGroup\\API\\SPMED.WebApi\\SPMED.WebApi\\SPMED.WebApi.csproj": {}
+    "C:\\Users\\migue\\OneDrive\\Área de Trabalho\\SENAI\\SPMED\\API\\SPMED.WebApi\\SPMED.WebApi\\SPMED.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fic\\Desktop\\Nova pasta\\SPMedicalGroup\\API\\SPMED.WebApi\\SPMED.WebApi\\SPMED.WebApi.csproj": {
+    "C:\\Users\\migue\\OneDrive\\Área de Trabalho\\SENAI\\SPMED\\API\\SPMED.WebApi\\SPMED.WebApi\\SPMED.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fic\\Desktop\\Nova pasta\\SPMedicalGroup\\API\\SPMED.WebApi\\SPMED.WebApi\\SPMED.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\migue\\OneDrive\\Área de Trabalho\\SENAI\\SPMED\\API\\SPMED.WebApi\\SPMED.WebApi\\SPMED.WebApi.csproj",
         "projectName": "SPMED.WebApi",
-        "projectPath": "C:\\Users\\fic\\Desktop\\Nova pasta\\SPMedicalGroup\\API\\SPMED.WebApi\\SPMED.WebApi\\SPMED.WebApi.csproj",
-        "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fic\\Desktop\\Nova pasta\\SPMedicalGroup\\API\\SPMED.WebApi\\SPMED.WebApi\\obj\\",
+        "projectPath": "C:\\Users\\migue\\OneDrive\\Área de Trabalho\\SENAI\\SPMED\\API\\SPMED.WebApi\\SPMED.WebApi\\SPMED.WebApi.csproj",
+        "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\migue\\OneDrive\\Área de Trabalho\\SENAI\\SPMED\\API\\SPMED.WebApi\\SPMED.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.2, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.12.2, )"
@@ -89,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

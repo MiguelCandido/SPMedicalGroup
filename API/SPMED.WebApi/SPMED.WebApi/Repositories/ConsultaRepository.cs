@@ -76,7 +76,7 @@ namespace SPMED.WebApi.Repositories
         {
             Consultum consultaBuscada = ctx.Consulta.Find(idconsulta);
 
-            consultaBuscada.Situacao = consulta.Situacao;
+            consultaBuscada.Descricao = consulta.Descricao;
 
             ctx.Consulta.Update(consultaBuscada);
 
@@ -91,6 +91,14 @@ namespace SPMED.WebApi.Repositories
 
         public List<Consultum> listarMinhas(int idusuario)
         {
+            Usuario user = ctx.Usuarios.Find(idusuario);
+
+            if (user.IdTipoUser == 2)
+            {
+                return ctx.Consulta
+                .Where(p => p.IdMedicoNavigation.IdUsuarioNavigation.IdUsuario == idusuario)
+                .ToList();
+            }
             return ctx.Consulta
                 .Where(p => p.IdPacienteNavigation.IdUsuarioNavigation.IdUsuario == idusuario)
                 .ToList();

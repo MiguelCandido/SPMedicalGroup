@@ -26,6 +26,10 @@ namespace SPMED.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Lista as consultas
+        /// </summary>
+        /// <returns> uma lista de consultas</returns>
         [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()
@@ -35,7 +39,11 @@ namespace SPMED.WebApi.Controllers
             return Ok(listaConsulta);
         }
 
-
+        /// <summary>
+        /// Busca uma consulta por ID
+        /// </summary>
+        /// <param name="idConsulta">O id da consulta a ser buscada</param>
+        /// <returns>A consulta encontrada</returns>
         [Authorize(Roles = "1")]
         [HttpGet("{idConsulta}")]
         public IActionResult BuscarPorID(int idConsulta)
@@ -57,6 +65,10 @@ namespace SPMED.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Cadastra uma consulta
+        /// </summary>
+        /// <param name="consulta">O objeto com os dados da nova consulta</param>
         [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Consultum consulta)
@@ -76,6 +88,12 @@ namespace SPMED.WebApi.Controllers
            
         }
 
+        /// <summary>
+        /// Atualiza uma consulta existente
+        /// </summary>
+        /// <param name="idConsulta">id da consulta a ser atualizada</param>
+        /// <param name="consultaUPDT">Objeto com os dados novos da consulta</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPut("{idConsulta}")]
         public IActionResult Atualizar(int idConsulta, Consultum consultaUPDT)
@@ -99,6 +117,11 @@ namespace SPMED.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Deleta uma consulta
+        /// </summary>
+        /// <param name="idConsulta">ID da consulta a ser deletada</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpDelete("{idConsulta}")]
         public IActionResult Deletar(int idConsulta)
@@ -123,6 +146,12 @@ namespace SPMED.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Altera a situação de uma consulta
+        /// </summary>
+        /// <param name="idConsulta"> id da consulta a ser alterada</param>
+        /// <param name="consulta">objeto com a situação nova</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPost("situacao/{idConsulta}")]
         public IActionResult AlterarSituacao(int idConsulta, Consultum consulta)
@@ -143,9 +172,13 @@ namespace SPMED.WebApi.Controllers
 
                 return BadRequest(error);
             }
-      
+
         }
 
+        /// <summary>
+        /// lista as consultas do usuário logado
+        /// </summary>
+        /// <returns>uma lista de consultas</returns>
         [Authorize(Roles = "2,3")]
         [HttpGet("minhas")]
         public IActionResult ListarMinhas()
@@ -166,9 +199,15 @@ namespace SPMED.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Adiciona a descrição da consulta
+        /// </summary>
+        /// <param name="idConsulta">id da consulta a ser descrita</param>
+        /// <param name="consulta">objeto com a descrição da consulta</param>
+        /// <returns></returns>
         [Authorize(Roles = "2")]
-        [HttpPost("descrever/{idusuario}")]
-        public IActionResult Descrever(int idusuario, Consultum consulta)
+        [HttpPost("descrever/{idConsulta}")]
+        public IActionResult Descrever(int idConsulta, Consultum consulta)
         {
             try
             {
@@ -181,7 +220,7 @@ namespace SPMED.WebApi.Controllers
                     });
                 }
 
-                _consultaRepository.Descrever(idusuario, consulta);
+                _consultaRepository.Descrever(idConsulta, consulta);
                 return StatusCode(204);
             }
             catch (Exception error)

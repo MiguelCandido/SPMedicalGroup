@@ -24,6 +24,10 @@ namespace SPMED.WebApi.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+        /// <summary>
+        /// Lista os usuarios
+        /// </summary>
+        /// <returns> Uma lista de usuarios</returns>
         [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()
@@ -33,6 +37,11 @@ namespace SPMED.WebApi.Controllers
             return Ok(listaUsuario);
         }
 
+        /// <summary>
+        /// Busca um usuario pelo id
+        /// </summary>
+        /// <param name="idUsuario">id do usuario a ser buscado</param>
+        /// <returns>um usuario encontrado</returns>
         [Authorize(Roles = "1")]
         [HttpGet("{idUsuario}")]
         public IActionResult BuscarPorID(int idUsuario)
@@ -54,6 +63,11 @@ namespace SPMED.WebApi.Controllers
         
         }
 
+        /// <summary>
+        /// Cadastra um usuario
+        /// </summary>
+        /// <param name="usuario">Objeto com os dados do usuario</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Usuario usuario)
@@ -63,6 +77,12 @@ namespace SPMED.WebApi.Controllers
             return StatusCode(201);
         }
 
+        /// <summary>
+        /// Atualiza um usuario
+        /// </summary>
+        /// <param name="idUsuario">id do usuario a ser atualizado</param>
+        /// <param name="usuarioUPDT">dados novos do usuario</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPut("{idUsuario}")]
         public IActionResult Atualizar(int idUsuario, Usuario usuarioUPDT)
@@ -86,6 +106,11 @@ namespace SPMED.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// deleta um usuario
+        /// </summary>
+        /// <param name="idUsuario">id do usuario a ser deletado</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpDelete("{idUsuario}")]
         public IActionResult Deletar(int idUsuario)

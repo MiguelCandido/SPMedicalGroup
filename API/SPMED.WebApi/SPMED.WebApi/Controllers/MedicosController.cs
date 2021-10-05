@@ -24,6 +24,11 @@ namespace SPMED.WebApi.Controllers
             _medicoRepository = new MedicoRepository();
         }
 
+        /// <summary>
+        /// cadastra um medico
+        /// </summary>
+        /// <param name="medico">objeto com os dados do novo medico</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Medico medico)
@@ -32,7 +37,12 @@ namespace SPMED.WebApi.Controllers
 
             return StatusCode(201);
         }
-
+        /// <summary>
+        /// atualiza os dados de um medico
+        /// </summary>
+        /// <param name="idMedico">id do medico a ser atualizado</param>
+        /// <param name="medicoUPDT">objeto com os dados do medico a serem atualizados</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPut("{idMedico}")]
         public IActionResult Atualizar(int idMedico, Medico medicoUPDT)
@@ -56,6 +66,11 @@ namespace SPMED.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// deleta um medico do bd
+        /// </summary>
+        /// <param name="idMedico">id do medico a ser deletado</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpDelete("{idMedico}")]
         public IActionResult Deletar(int idMedico)
@@ -81,6 +96,10 @@ namespace SPMED.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Lista os medicos
+        /// </summary>
+        /// <returns> Uma lista de medicos</returns>
         [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()

@@ -23,7 +23,11 @@ namespace SPMED.WebApi.Controllers
         {
             _pacienteRepository = new PacienteRepository();
         }
-
+        /// <summary>
+        /// cadastra um paciente
+        /// </summary>
+        /// <param name="paciente">objeto com os dados do novo paciente</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Paciente paciente)
@@ -33,6 +37,12 @@ namespace SPMED.WebApi.Controllers
             return StatusCode(201);
         }
 
+        /// <summary>
+        /// atualiza um paciente
+        /// </summary>
+        /// <param name="idPaciente">id do paciente a ser atualizado</param>
+        /// <param name="pacienteUPDT">objeto com os dados do paciente a serem atualizados</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPut("{idPaciente}")]
         public IActionResult Atualizar(int idPaciente, Paciente pacienteUPDT)
@@ -56,6 +66,11 @@ namespace SPMED.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// deleta um paciente
+        /// </summary>
+        /// <param name="idPaciente">id do paciente a ser deletado</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpDelete("{idPaciente}")]
         public IActionResult Deletar(int idPaciente)
@@ -80,7 +95,10 @@ namespace SPMED.WebApi.Controllers
 
 
         }
-
+        /// <summary>
+        /// Lista os pacientes
+        /// </summary>
+        /// <returns> Uma lista de pacientes</returns>
         [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()

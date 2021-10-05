@@ -23,7 +23,10 @@ namespace SPMED.WebApi.Controllers
         {
             _clinicaRepository = new ClinicaRepository();
         }
-
+        /// <summary>
+        /// Lista as clinicas
+        /// </summary>
+        /// <returns> Uma lista de clinicas</returns>
         [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()
@@ -33,6 +36,11 @@ namespace SPMED.WebApi.Controllers
             return Ok(listaClinica);
         }
 
+        /// <summary>
+        /// Busca uma clinica por id
+        /// </summary>
+        /// <param name="idClinica">id da clinica a ser buscada</param>
+        /// <returns>uma clinica encontrada</returns>
         [Authorize(Roles = "1")]
         [HttpGet("{idClinica}")]
         public IActionResult BuscarPorID(int idClinica)
@@ -54,6 +62,11 @@ namespace SPMED.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// cadastra uma clinica
+        /// </summary>
+        /// <param name="clinica">objeto clinica com os dados a serem cadastrados</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Clinica clinica)
@@ -63,6 +76,12 @@ namespace SPMED.WebApi.Controllers
             return StatusCode(201);
         }
 
+        /// <summary>
+        /// atualiza uma clinica
+        /// </summary>
+        /// <param name="idClinica">id da clinica a ser atualizada</param>
+        /// <param name="clinicaUPDT">dados das clinicas a serem atualizados</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPut("{idClinica}")]
         public IActionResult Atualizar(int idClinica, Clinica clinicaUPDT)
@@ -86,6 +105,11 @@ namespace SPMED.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// deleta uma clinica
+        /// </summary>
+        /// <param name="idClinica">id da clinica a ser deletada</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpDelete("{idClinica}")]
         public IActionResult Deletar(int idClinica)
